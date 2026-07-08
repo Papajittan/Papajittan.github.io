@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Papajittan — personal site of Papawit Saeliw, student from Thailand." />
+    <title>Papajittan</title>
+    <!-- Pixel-art "P" favicon in gruvbox orange on dark bg -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' shape-rendering='crispEdges'%3E%3Crect width='10' height='10' fill='%231d2021'/%3E%3Crect x='2' y='1' width='2' height='8' fill='%23fe8019'/%3E%3Crect x='4' y='1' width='3' height='2' fill='%23fe8019'/%3E%3Crect x='7' y='1' width='1' height='4' fill='%23fe8019'/%3E%3Crect x='4' y='3' width='3' height='2' fill='%23fe8019'/%3E%3C/svg%3E" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- CRT overlay: scanlines + vignette, purely decorative -->
+    <div id="crt-overlay" aria-hidden="true"></div>
+
+    <div id="page">
+
+      <!-- ══ HEADER ══════════════════════════════════════════ -->
+      <header>
+        <div>
+          <h1>Papajittan</h1>
+          <p class="subname">Papawit Saeliw</p>
+          <p class="tagline">Once a passionate developer, now an AI slop generator (or something like that, idk)</p>
+        </div>
+        <img class="header-mascot" src="./lain-bear.png" alt="Pixel art of Lain Iwakura in a bear kigurumi" width="500" height="500" />
+      </header>
+
+      <div class="divider" aria-hidden="true">▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░</div>
+
+      <main>
+
+        <!-- ══ ABOUT ════════════════════════════════════════ -->
+        <section class="panel" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          <p>
+            Hi! I'm Papajittan — a student from Thailand who likes listening to music and reading novels once in a while.
+            Right now I'm at Satit Prasarnmit Demonstration School (Secondary), in the Engineering–AI major.
+            I used to be really into coding, but lately my interests have drifted from tech toward literature and law.
+            Hopefully I'll find my way back to programming someday.
+          </p>
+        </section>
+
+        <!-- ══ INTERESTS & HOBBIES ═══════════════════════════ -->
+        <section class="panel" aria-labelledby="interests-heading">
+          <h2 id="interests-heading">Interests &amp; Hobbies</h2>
+          <div class="interests-grid">
+
+            <div>
+              <h3>▸ Games</h3>
+              <ul>
+                <li>Minecraft</li>
+                <li>Genshin Impact</li>
+                <li>Honkai: Star Rail</li>
+                <li>Slay the Spire 2</li>
+                <li>Stardew Valley</li>
+                <li>Osu!</li>
+                <li>RoV</li>
+                <li>Omori</li>
+                <li><em style="color:var(--color-purple-bright)">(also a certified Persona larper)</em></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>▸ Anime (favorites)</h3>
+              <ul>
+                <li>Clannad: After Story</li>
+                <li>Violet Evergarden</li>
+                <li>Neon Genesis Evangelion</li>
+                <li>Serial Experiments Lain</li>
+                <li>A Place Further Than the Universe</li>
+                <li>Kaguya-sama: Love Is War</li>
+                <li>A Silent Voice</li>
+                <li>Kiki's Delivery Service</li>
+                <li>Welcome to the N.H.K.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>▸ Manga</h3>
+              <ul>
+                <li>Goodnight Punpun</li>
+                <li>Yotsuba&amp;!</li>
+                <li>Goodbye, Eri</li>
+                <li>Three Days of Happiness</li>
+              </ul>
+
+              <h3>▸ Books</h3>
+              <ul>
+                <li>No Longer Human</li>
+                <li>White Nights</li>
+                <li>Meditations</li>
+                <li>The Metamorphosis</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>▸ Music</h3>
+              <ul>
+                <li>Pause</li>
+                <li>Asanee &amp; Wasan</li>
+                <li>Bird Thongchai</li>
+                <li>X Japan</li>
+                <li>Ado</li>
+                <li>Queen</li>
+                <li>Pink Floyd</li>
+                <li>Radiohead</li>
+                <li>C418</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>▸ Linux</h3>
+              <ul>
+                <li>Arch</li>
+                <li>Debian</li>
+                <li>Mint</li>
+                <li>Fedora</li>
+                <li>Kali</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>▸ CTF / Cybersecurity</h3>
+              <ul>
+                <li>Forensics &amp; OSINT</li>
+                <li>Cryptography</li>
+                <li>Reverse Engineering &amp; Pwn</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══ SKILLS ════════════════════════════════════════ -->
+        <section class="panel" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Skills</h2>
+
+          <h3>▸ Languages</h3>
+          <div>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Go</span>
+            <span class="skill-tag">C#</span>
+          </div>
+
+          <h3>▸ Web</h3>
+          <div>
+            <span class="skill-tag">CSS</span>
+          </div>
+
+          <h3>▸ Databases &amp; Backend</h3>
+          <div>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Firebase</span>
+          </div>
+
+          <h3>▸ DevOps &amp; Tools</h3>
+          <div>
+            <span class="skill-tag">Linux (Arch)</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">LaTeX</span>
+          </div>
+
+          <h3>▸ Soft Skills</h3>
+          <ul style="list-style:none;padding:0;margin-top:0.5rem">
+
+            <li class="soft-skill">
+              <!-- Speech bubble: Communication -->
+              <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="1" y="1" width="8" height="6" fill="#83a598"/>
+                <rect x="1" y="1" width="8" height="1" fill="#458588"/>
+                <rect x="2" y="7" width="2" height="2" fill="#83a598"/>
+                <rect x="2" y="8" width="1" height="1" fill="#83a598"/>
+              </svg>
+              Communication
+            </li>
+
+            <li class="soft-skill">
+              <!-- Gear/brain: Critical Thinking -->
+              <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="4" y="0" width="2" height="2" fill="#b8bb26"/>
+                <rect x="0" y="4" width="2" height="2" fill="#b8bb26"/>
+                <rect x="8" y="4" width="2" height="2" fill="#b8bb26"/>
+                <rect x="4" y="8" width="2" height="2" fill="#b8bb26"/>
+                <rect x="2" y="2" width="6" height="6" fill="#98971a"/>
+                <rect x="3" y="3" width="4" height="4" fill="#b8bb26"/>
+                <rect x="4" y="4" width="2" height="2" fill="#98971a"/>
+              </svg>
+              Critical Thinking
+            </li>
+
+            <li class="soft-skill">
+              <!-- Puzzle piece: Problem Solving -->
+              <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="1" y="1" width="4" height="4" fill="#d79921"/>
+                <rect x="3" y="0" width="2" height="2" fill="#d79921"/>
+                <rect x="5" y="1" width="4" height="4" fill="#fabd2f"/>
+                <rect x="8" y="3" width="2" height="2" fill="#fabd2f"/>
+                <rect x="1" y="5" width="4" height="4" fill="#fabd2f"/>
+                <rect x="3" y="8" width="2" height="2" fill="#fabd2f"/>
+                <rect x="5" y="5" width="4" height="4" fill="#d79921"/>
+              </svg>
+              Problem Solving
+            </li>
+
+            <li class="soft-skill">
+              <!-- Two figures: Teamwork -->
+              <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="1" y="1" width="2" height="2" fill="#8ec07c"/>
+                <rect x="1" y="4" width="2" height="4" fill="#689d6a"/>
+                <rect x="7" y="1" width="2" height="2" fill="#8ec07c"/>
+                <rect x="7" y="4" width="2" height="4" fill="#689d6a"/>
+                <rect x="4" y="2" width="2" height="2" fill="#8ec07c"/>
+                <rect x="4" y="5" width="2" height="3" fill="#689d6a"/>
+              </svg>
+              Teamwork
+            </li>
+
+            <li class="soft-skill">
+              <!-- Shield: Integrity -->
+              <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="2" y="1" width="6" height="1" fill="#d3869b"/>
+                <rect x="1" y="2" width="8" height="5" fill="#b16286"/>
+                <rect x="2" y="7" width="6" height="1" fill="#b16286"/>
+                <rect x="3" y="8" width="4" height="1" fill="#b16286"/>
+                <rect x="4" y="9" width="2" height="1" fill="#b16286"/>
+                <rect x="4" y="4" width="2" height="2" fill="#d3869b"/>
+              </svg>
+              Integrity
+            </li>
+
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- ══ FOOTER / CONTACT ══════════════════════════════ -->
+      <footer aria-labelledby="contact-heading">
+        <img class="footer-peek" src="./lain-peek.png" alt="" aria-hidden="true" width="400" height="400" />
+        <h2 id="contact-heading">Contact</h2>
+
+        <nav aria-label="Contact links">
+
+          <a class="contact-link" href="mailto:papawit@proton.me">
+            <!-- Envelope -->
+            <svg width="20" height="16" viewBox="0 0 10 8" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="10" height="8" fill="#83a598"/>
+              <rect x="1" y="1" width="8" height="6" fill="#458588"/>
+              <rect x="1" y="1" width="4" height="3" fill="#83a598"/>
+              <rect x="5" y="1" width="4" height="3" fill="#83a598"/>
+              <rect x="2" y="2" width="2" height="2" fill="#458588"/>
+              <rect x="6" y="2" width="2" height="2" fill="#458588"/>
+              <rect x="4" y="3" width="2" height="2" fill="#83a598"/>
+            </svg>
+            papawit@proton.me
+          </a>
+
+          <a class="contact-link" href="https://github.com/Papajittan" target="_blank" rel="noopener">
+            <!-- Blocky cat silhouette (GitHub) -->
+            <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="1" y="0" width="2" height="2" fill="#fe8019"/>
+              <rect x="7" y="0" width="2" height="2" fill="#fe8019"/>
+              <rect x="0" y="2" width="10" height="6" fill="#fe8019"/>
+              <rect x="0" y="8" width="3" height="2" fill="#fe8019"/>
+              <rect x="7" y="8" width="3" height="2" fill="#fe8019"/>
+              <rect x="2" y="4" width="2" height="2" fill="#1d2021"/>
+              <rect x="6" y="4" width="2" height="2" fill="#1d2021"/>
+              <rect x="4" y="6" width="2" height="1" fill="#1d2021"/>
+            </svg>
+            github.com/Papajittan
+          </a>
+
+          <a class="contact-link" href="https://www.instagram.com/someone.apk/" target="_blank" rel="noopener">
+            <!-- Camera (Instagram) -->
+            <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="1" y="1" width="8" height="8" fill="#d3869b"/>
+              <rect x="2" y="2" width="6" height="6" fill="#b16286"/>
+              <rect x="3" y="3" width="4" height="4" fill="#d3869b"/>
+              <rect x="4" y="4" width="2" height="2" fill="#b16286"/>
+              <rect x="6" y="1" width="2" height="2" fill="#fe8019"/>
+            </svg>
+            instagram.com/someone.apk
+          </a>
+
+          <a class="contact-link" href="https://www.linkedin.com/in/papawit-saeliw-6953393a4/" target="_blank" rel="noopener">
+            <!-- Briefcase (LinkedIn) -->
+            <svg width="20" height="18" viewBox="0 0 10 9" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="3" y="0" width="4" height="2" fill="#83a598"/>
+              <rect x="3" y="1" width="4" height="1" fill="#458588"/>
+              <rect x="0" y="2" width="10" height="7" fill="#83a598"/>
+              <rect x="1" y="3" width="8" height="5" fill="#458588"/>
+              <rect x="4" y="4" width="2" height="3" fill="#83a598"/>
+              <rect x="0" y="5" width="10" height="1" fill="#83a598"/>
+            </svg>
+            linkedin.com/in/papawit-saeliw
+          </a>
+
+          <a class="contact-link" href="https://www.facebook.com/profile.php?id=100085021966916" target="_blank" rel="noopener">
+            <!-- "f" block (Facebook) -->
+            <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="10" height="10" fill="#458588"/>
+              <rect x="3" y="1" width="4" height="2" fill="#83a598"/>
+              <rect x="3" y="1" width="2" height="8" fill="#83a598"/>
+              <rect x="2" y="4" width="5" height="2" fill="#83a598"/>
+            </svg>
+            facebook.com (Papawit)
+          </a>
+
+          <a class="contact-link" href="https://myanimelist.net/profile/Papajittan" target="_blank" rel="noopener">
+            <!-- Star/tv (MyAnimeList) -->
+            <svg width="20" height="20" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="1" y="1" width="8" height="6" fill="#fabd2f"/>
+              <rect x="2" y="2" width="6" height="4" fill="#1d2021"/>
+              <rect x="3" y="7" width="4" height="1" fill="#fabd2f"/>
+              <rect x="2" y="8" width="6" height="1" fill="#fabd2f"/>
+              <rect x="4" y="3" width="2" height="2" fill="#fabd2f"/>
+            </svg>
+            myanimelist.net/Papajittan
+          </a>
+
+        </nav>
+
+        <p class="footer-year">© <span id="footer-year">2026</span> Papajittan</p>
+
+        <p class="lain-whisper">Let's all love Lain.</p>
+      </footer>
+
+    </div><!-- /#page -->
+  </body>
+</html>

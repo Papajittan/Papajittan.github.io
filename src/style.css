@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "@fontsource/press-start-2p/400.css";
+@import "@fontsource/vt323/400.css";
+
+@theme {
+  /* Gruvbox dark medium */
+  --color-bg: #282828;
+  --color-bg-soft: #3c3836;
+  --color-bg-hard: #1d2021;
+  --color-fg: #ebdbb2;
+  --color-fg-dim: #a89984;
+  --color-gray: #928374;
+  --color-red: #cc241d;
+  --color-red-bright: #fb4934;
+  --color-green: #98971a;
+  --color-green-bright: #b8bb26;
+  --color-yellow: #d79921;
+  --color-yellow-bright: #fabd2f;
+  --color-blue: #458588;
+  --color-blue-bright: #83a598;
+  --color-purple: #b16286;
+  --color-purple-bright: #d3869b;
+  --color-aqua: #689d6a;
+  --color-aqua-bright: #8ec07c;
+  --color-orange: #d65d0e;
+  --color-orange-bright: #fe8019;
+
+  --font-pixel: "Press Start 2P", monospace;
+  --font-vt323: "VT323", monospace;
+}
+
+/* ─── Reset / base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important; /* square corners everywhere */
+}
+
+html {
+  background: var(--color-bg-hard);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-vt323);
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-aqua-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  background: var(--color-aqua-bright);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-yellow-bright);
+  outline-offset: 2px;
+}
+
+h1, h2 {
+  font-family: var(--font-pixel);
+  color: var(--color-yellow-bright);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: var(--color-green-bright);
+}
+
+h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--color-aqua-bright);
+  margin: 1rem 0 0.4rem;
+}
+
+/* ─── Blinking cursor on headings ──────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  h1::after, h2::after {
+    content: "█";
+    display: inline-block;
+    margin-left: 0.3em;
+    color: var(--color-orange-bright);
+    animation: blink-cursor 1s steps(1) infinite;
+  }
+}
+
+/* ─── CRT overlay ───────────────────────────────────────── */
+#crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* scanlines */
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.12) 3px,
+      rgba(0, 0, 0, 0.12) 4px
+    ),
+    /* vignette */
+    radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+}
+
+/* ─── Layout ────────────────────────────────────────────── */
+#page {
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ─── Pixel-style panel borders ────────────────────────── */
+.panel {
+  border: 3px solid var(--color-bg-soft);
+  background: var(--color-bg-soft);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  /* pixel stepped corners via box-shadow */
+  box-shadow:
+    -3px 0 0 0 var(--color-gray),
+    3px 0 0 0 var(--color-gray),
+    0 -3px 0 0 var(--color-gray),
+    0 3px 0 0 var(--color-gray);
+}
+
+/* ─── Dithered divider ──────────────────────────────────── */
+.divider {
+  font-family: var(--font-vt323);
+  color: var(--color-gray);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+/* ─── Lists ─────────────────────────────────────────────── */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li::before {
+  content: "▸ ";
+  color: var(--color-orange-bright);
+}
+
+/* ─── Skill tags ────────────────────────────────────────── */
+.skill-tag {
+  display: inline-block;
+  background: var(--color-bg-hard);
+  border: 2px solid var(--color-blue);
+  color: var(--color-blue-bright);
+  font-family: var(--font-vt323);
+  font-size: 1.1rem;
+  padding: 0.1rem 0.5rem;
+  margin: 0.15rem 0.15rem 0.15rem 0;
+}
+
+/* ─── Soft skills row ───────────────────────────────────── */
+li.soft-skill::before {
+  content: none; /* icon is the bullet */
+}
+
+.soft-skill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.soft-skill svg {
+  flex-shrink: 0;
+}
+
+/* ─── Contact links ─────────────────────────────────────── */
+.contact-link {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  background: var(--color-aqua-bright);
+  color: var(--color-bg);
+}
+
+/* ─── Interests multi-column on desktop ─────────────────── */
+@media (min-width: 640px) {
+  .interests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ─── Header ────────────────────────────────────────────── */
+header {
+  padding: 2.5rem 0 1rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header > div {
+  flex: 1 1 30ch;
+  min-width: 0;
+}
+
+.header-mascot {
+  width: clamp(110px, 22vw, 160px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.subname {
+  font-family: var(--font-vt323);
+  color: var(--color-fg-dim);
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.tagline {
+  font-family: var(--font-vt323);
+  color: var(--color-fg-dim);
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+}
+
+.tagline::before {
+  content: "# ";
+  color: var(--color-gray);
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+footer {
+  position: relative;
+  color: var(--color-fg-dim);
+  font-size: 1rem;
+  margin-top: 100px; /* clears the peeking image above the border */
+  padding-top: 1rem;
+  border-top: 2px solid var(--color-gray);
+}
+
+.footer-peek {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  transform: translateY(-100%);
+  width: 90px;
+  height: auto;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.footer-year {
+  margin-top: 1.5rem;
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ─── "Let's all love Lain." ────────────────────────────── */
+.lain-whisper {
+  margin-top: 3rem;
+  text-align: center;
+  font-family: var(--font-vt323);
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  color: var(--color-red);
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes lain-flicker {
+    0%, 100% { opacity: 0.55; }
+    7%  { opacity: 0.2; }
+    9%  { opacity: 0.6; }
+    48% { opacity: 0.5; }
+    52% { opacity: 0.15; }
+    54% { opacity: 0.6; }
+    81% { opacity: 0.3; }
+  }
+
+  .lain-whisper {
+    animation: lain-flicker 4s infinite;
+  }
+}
