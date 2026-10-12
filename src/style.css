@@ -3,27 +3,18 @@
 @import "@fontsource/vt323/400.css";
 
 @theme {
-  /* Gruvbox dark medium */
-  --color-bg: #282828;
-  --color-bg-soft: #3c3836;
-  --color-bg-hard: #1d2021;
-  --color-fg: #ebdbb2;
-  --color-fg-dim: #a89984;
-  --color-gray: #928374;
-  --color-red: #cc241d;
-  --color-red-bright: #fb4934;
-  --color-green: #98971a;
-  --color-green-bright: #b8bb26;
-  --color-yellow: #d79921;
-  --color-yellow-bright: #fabd2f;
-  --color-blue: #458588;
-  --color-blue-bright: #83a598;
-  --color-purple: #b16286;
-  --color-purple-bright: #d3869b;
-  --color-aqua: #689d6a;
-  --color-aqua-bright: #8ec07c;
-  --color-orange: #d65d0e;
-  --color-orange-bright: #fe8019;
+  /* Midnight-blue machine casing, faded phosphor, and amber indicators. */
+  --color-bg: #101a2e;
+  --color-bg-soft: #18263b;
+  --color-bg-hard: #0a1222;
+  --color-fg: #d7dddf;
+  --color-fg-dim: #9baaba;
+  --color-gray: #52677e;
+  --color-blue: #496781;
+  --color-blue-bright: #a7bfd0;
+  --color-accent: #c5ac79;
+  --color-accent-dim: #8f7954;
+  --color-red: #b58279;
 
   --font-pixel: "Press Start 2P", monospace;
   --font-vt323: "VT323", monospace;
@@ -36,6 +27,7 @@
 }
 
 html {
+  color-scheme: dark;
   background: var(--color-bg-hard);
 }
 
@@ -50,25 +42,25 @@ body {
 }
 
 a {
-  color: var(--color-aqua-bright);
+  color: var(--color-blue-bright);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  background: var(--color-aqua-bright);
+  background: var(--color-blue-bright);
   color: var(--color-bg);
   text-decoration: none;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-yellow-bright);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
 h1, h2 {
   font-family: var(--font-pixel);
-  color: var(--color-yellow-bright);
+  color: var(--color-accent);
   line-height: 1.5;
 }
 
@@ -78,14 +70,19 @@ h1 {
 
 h2 {
   font-size: 1rem;
-  color: var(--color-green-bright);
+  color: var(--color-blue-bright);
 }
 
 h3 {
   font-family: var(--font-pixel);
   font-size: 0.65rem;
-  color: var(--color-aqua-bright);
+  color: var(--color-blue-bright);
   margin: 1rem 0 0.4rem;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg-hard);
 }
 
 /* ─── Blinking cursor on headings ──────────────────────── */
@@ -99,7 +96,7 @@ h3 {
     content: "█";
     display: inline-block;
     margin-left: 0.3em;
-    color: var(--color-orange-bright);
+    color: var(--color-accent);
     animation: blink-cursor 1s steps(1) infinite;
   }
 }
@@ -116,14 +113,14 @@ h3 {
       to bottom,
       transparent 0px,
       transparent 3px,
-      rgba(0, 0, 0, 0.12) 3px,
-      rgba(0, 0, 0, 0.12) 4px
+      rgba(5, 10, 20, 0.12) 3px,
+      rgba(5, 10, 20, 0.12) 4px
     ),
     /* vignette */
     radial-gradient(
       ellipse at center,
       transparent 55%,
-      rgba(0, 0, 0, 0.45) 100%
+      rgba(5, 10, 20, 0.45) 100%
     );
 }
 
@@ -169,7 +166,7 @@ ul {
 
 ul li::before {
   content: "▸ ";
-  color: var(--color-orange-bright);
+  color: var(--color-accent);
 }
 
 /* ─── Skill tags ────────────────────────────────────────── */
@@ -211,7 +208,7 @@ li.soft-skill::before {
 }
 
 .contact-link:hover {
-  background: var(--color-aqua-bright);
+  background: var(--color-blue-bright);
   color: var(--color-bg);
 }
 
