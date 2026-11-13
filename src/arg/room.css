@@ -1,0 +1,114 @@
+.arg-page { background: #0b1423; font-family: ui-monospace, 'Cascadia Code', 'Liberation Mono', monospace; font-size: 1rem; line-height: 1.85; }
+.arg-shell { width: min(100% - 3rem, 1080px); margin-inline: auto; padding: 2.5rem 0 4rem; }
+.arg-nav { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 1.1rem; margin-bottom: 5rem; border-bottom: 1px solid #34485c; color: #a8b7c5; font-size: .75rem; }
+.arg-page h1 { font-family: var(--font-vt323); font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.15; letter-spacing: -.02em; font-weight: 400; margin: .6rem 0 1.6rem; }
+.arg-page h2, .arg-page h3 { font-family: inherit; line-height: 1.6; font-weight: 400; }
+.arg-page h2 { font-size: 1rem; margin: 0 0 1rem; }
+.arg-page h3 { font-size: .85rem; margin: 0 0 1rem; }
+.arg-page h1::after, .arg-page h2::after { content: none; }
+.arg-page p { margin: 0 0 1.2rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .68rem; color: #a7bfd0; }
+.room-intro { max-width: 62ch; color: #bdc9d1; margin-bottom: 3rem; }
+.muted, .file-metadata, .arg-bottom { color: #a8b7c5; }
+.arg-page button, .arg-page input, .arg-page select { font: inherit; color: #d7dddf; background: #101e30; border: 1px solid #647b91; padding: .65rem .8rem; min-height: 44px; max-width: 100%; }
+.arg-page button { cursor: pointer; color: #d2b984; }
+.arg-page button:hover:not(:disabled) { background: #1c2e44; border-color: #c5ac79; }
+.arg-page button:disabled { cursor: default; color: #a8b7c5; border-color: #34485c; }
+.arg-page :focus-visible { outline: 2px solid #d2b984; outline-offset: 4px; }
+.arg-page h1:focus, .arg-page h2:focus, .arg-page h3:focus { outline: none; }
+.arg-page label { display: block; }
+.unlock-form, .puzzle-form { max-width: 64ch; display: grid; gap: .75rem; }
+.unlock-form button, .puzzle-form > button { justify-self: start; }
+.unlock-form .muted { font-size: .8rem; }
+.status { min-height: 1.8em; color: #c5d5df; font-size: .85rem; }
+.help { max-width: 65ch; margin-top: 1.5rem; color: #a8b7c5; font-size: .85rem; }
+.help summary, .comparison summary { cursor: pointer; padding: .6rem 0; min-height: 44px; color: #c5ac79; }
+.help p { margin-top: .8rem; }
+.arg-bottom { border-top: 1px solid #34485c; padding-top: 1rem; margin-top: 7rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .7rem; }
+.skip-link { position: absolute; left: 1rem; top: -100px; padding: .7rem; background: #101a2e; z-index: 10000; }
+.skip-link:focus { top: 1rem; }
+.receipt { max-width: 65ch; border-top: 1px dashed #647b91; padding-top: 2rem; margin-top: 3rem; display: grid; gap: .75rem; }
+.receipt p { margin: 0; }
+.receipt input { width: 100%; min-width: 0; font-size: .88rem; }
+.receipt button { justify-self: start; }
+.receipt .continue-link { justify-self: start; margin-top: .6rem; overflow-wrap: anywhere; }
+.receipt label, .receipt .muted { font-size: .8rem; }
+
+/* The connection repeats itself, but never flashes or takes control of reading. */
+.room-transmission .arg-shell { max-width: 880px; }
+.draft-console { border-left: 2px solid #b49a68; padding: 1.2rem 0 1.2rem 1.5rem; margin: 3rem 0 5rem; background: linear-gradient(90deg, #19233380, transparent); }
+.draft-console h2 { color: #d2b984; }
+.draft-line { max-width: 56ch; min-height: 5rem; white-space: pre-line; color: #b8cddd; }
+.draft-console .muted { font-size: .7rem; }
+.draft-console button { font-size: .75rem; }
+.transmission-text { max-width: 58ch; margin-bottom: 7rem; }
+.transmission-text p { margin-bottom: 1.7rem; }
+.recovered-log { margin-bottom: 3rem; }
+.recovered-log > .muted { font-size: .8rem; max-width: 60ch; }
+.log-lines { padding: 0; list-style: none; }
+.log-lines li { display: grid; grid-template-columns: 6rem 1fr; padding-block: .75rem; border-top: 1px solid #24374a; gap: 1.25rem; }
+.log-lines li::before { content: none; }
+.log-time { font-size: .75rem; color: #a8b7c5; padding-top: .15rem; }
+.log-message { color: #bccfdd; }
+
+/* An older desktop: copied dates, intact revision counters, and empty margins. */
+.room-archive .arg-shell { max-width: 1160px; }
+.archive-workbench { display: grid; grid-template-columns: 270px minmax(0, 1fr); border: 1px solid #43596d; margin: 2.5rem 0 4rem; min-height: 580px; }
+.file-list { border-right: 1px solid #43596d; padding: 1rem; background: #111e2f; }
+.arg-page .file-button { display: block; width: 100%; text-align: left; font-size: .8rem; padding: .8rem .55rem; margin-bottom: .35rem; background: transparent; border-color: transparent; color: #b8c9d5; overflow-wrap: anywhere; }
+.arg-page .file-button[aria-pressed=true] { background: #213045; border-color: #738ba0; color: #e1d2b6; }
+.archive-progress { font-size: .7rem; margin-top: 2rem !important; }
+.document-viewer { padding: 2rem; min-width: 0; background: #121d2c; }
+.document-viewer h2 { overflow-wrap: anywhere; color: #d8c6a5; }
+.empty-document { display: grid; align-content: center; min-height: 400px; text-align: center; color: #b0bdc9; font-size: .85rem; }
+.empty-icon { color: #b49a68; font-size: 3rem; margin-bottom: 1rem; }
+.file-metadata { display: grid; grid-template-columns: auto 1fr; gap: .2rem 1.2rem; font-size: .7rem; padding-bottom: 1.3rem; margin: 0 0 2rem; border-bottom: 1px solid #34485c; }
+.file-metadata dd { margin: 0; }
+.document-paper { min-height: 200px; color: #d1d6d5; font-size: .95rem; }
+.document-paper h3, .earlier-revision h3 { color: #a8b7c5; text-transform: uppercase; letter-spacing: .12em; font-size: .65rem; }
+.comparison { margin-top: 2rem; border-top: 1px dashed #52677e; font-size: .85rem; }
+.earlier-revision { padding: 1rem 0; }
+.margin-fragment { border-left: 2px solid #c5ac79; padding-left: 1rem; color: #dfc794; }
+.revision-note { margin-top: 1.5rem !important; color: #bfccd5; }
+.reconstruction { max-width: none; }
+.reconstruction fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.reconstruction legend { margin-bottom: 1.5rem; max-width: 66ch; }
+.reconstruction-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.reconstruction label { font-size: .7rem; color: #a8b7c5; min-width: 0; }
+.reconstruction select { width: 100%; display: block; font-size: .75rem; margin-top: .3rem; }
+.reconstruction > label { margin-top: 1rem; }
+.reconstruction .address-note { font-size: .75rem; max-width: 68ch; }
+
+/* The final copy gives the writing room, with no machinery left to animate. */
+.room-ending { background: #111c2b; }
+.room-ending #crt-overlay { display: none; }
+.room-ending .arg-shell { max-width: 690px; padding-bottom: 6rem; }
+.room-ending .arg-nav { margin-bottom: 9rem; border: 0; }
+.room-ending h1 { color: #e1d9c9; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.16; letter-spacing: -.04em; margin-bottom: 3rem; }
+.room-ending .eyebrow { color: #b8c4cf; }
+.room-ending .room-intro { margin-bottom: 4rem; }
+.ending-writing { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.2rem, 2.4vw, 1.45rem); line-height: 1.9; color: #e0ddd5; }
+.ending-section { margin-bottom: 4.5rem; }
+.ending-writing p { margin-bottom: 1.5rem; }
+.ending-closing { font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; color: #e1d9c9; padding-block: 2rem 5rem; }
+.unfinished-note { max-width: 48ch; font-size: .75rem; color: #b7c4ce; border-left: 1px solid #75889a; padding-left: 1.2rem; margin-bottom: 3rem !important; }
+.ending-return { font-size: .8rem; }
+.room-ending .arg-bottom { margin-top: 5rem; }
+@media (max-width: 700px) {
+  .arg-shell { width: min(100% - 2rem, 1080px); padding-top: 1.5rem; }
+  .arg-nav { margin-bottom: 3rem; font-size: .65rem; }
+  .arg-nav span { text-align: right; }
+  .archive-workbench { grid-template-columns: 1fr; }
+  .file-list { border-right: 0; border-bottom: 1px solid #43596d; display: grid; grid-template-columns: 1fr 1fr; gap: .2rem; }
+  .arg-page .file-button { font-size: .7rem; }
+  .archive-progress { grid-column: 1 / -1; margin: .5rem 0 0 !important; }
+  .document-viewer { padding: 1.5rem 1rem; }
+  .reconstruction-grid { grid-template-columns: 1fr 1fr; }
+  .log-lines li { grid-template-columns: 1fr; gap: .25rem; }
+  .draft-console { padding-left: 1rem; }
+  .room-ending .arg-nav { margin-bottom: 5rem; }
+}
+@media (max-width: 380px) { .reconstruction-grid, .file-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .arg-page *, .arg-page *::before, .arg-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

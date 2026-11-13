@@ -327,7 +327,19 @@
 
         <p class="footer-year">© <span id="footer-year">2026</span> Papajittan</p>
 
-        <p class="lain-whisper">Let's all love Lain.</p>
+        <p class="lain-whisper"><button id="whisper" type="button" aria-controls="earlier-copy" aria-expanded="false">Let's all love Lain.</button></p>
+        <!-- An older footer used alphabet positions. The receipt belongs to that copy. -->
+        <details id="earlier-copy" class="earlier-copy" data-letter-positions="23 09 18 05 04" data-index-origin="1">
+          <summary>23 09 18 05 04</summary>
+          <p class="muted">Earlier directory / alphabet index: A = 1, Z = 26.</p>
+          <form id="directory-form">
+            <label for="directory">Directory name</label>
+            <input id="directory" name="directory" type="text" required maxlength="40" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="directory-status" />
+            <button type="submit">Look for an earlier copy</button>
+            <p id="directory-status" class="status" role="status"></p>
+          </form>
+          <noscript><p>Read the positions as letters and open that directory, with a slash before and after it. JavaScript is needed to decrypt the preserved pages.</p></noscript>
+        </details>
       </footer>
 
     </div><!-- /#page -->

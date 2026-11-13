@@ -1,0 +1,37 @@
+/* The public page keeps its original layout. Only the recovery footer is new. */
+.footer-year { color: var(--color-fg-dim); }
+.lain-whisper { opacity: 1; animation: none; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes quiet-whisper { 0%, 100% { text-shadow: none; } 52% { text-shadow: 0 0 5px #b5827960; } }
+  .lain-whisper { animation: quiet-whisper 8s ease-in-out infinite; }
+}
+.lain-whisper button {
+  all: unset;
+  cursor: pointer;
+}
+.lain-whisper button:hover { text-decoration: underline; text-underline-offset: 5px; }
+.lain-whisper button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 6px; }
+.earlier-copy { max-width: 45ch; margin: .6rem auto 0; font-size: 1.05rem; }
+.earlier-copy > summary { text-align: center; letter-spacing: .18em; color: var(--color-fg-dim); cursor: pointer; }
+.earlier-copy > summary::marker { font-size: .6em; }
+.earlier-copy[open] { padding-bottom: 1rem; }
+.earlier-copy form, .receipt { display: grid; gap: .65rem; }
+.earlier-copy p { letter-spacing: normal; }
+.earlier-copy input, .earlier-copy button:not(#whisper) {
+  font: inherit;
+  padding: .5rem .75rem;
+  background: var(--color-bg-hard);
+  border: 1px solid var(--color-gray);
+  color: var(--color-fg);
+  max-width: 100%;
+  min-width: 0;
+}
+.earlier-copy button:not(#whisper) { cursor: pointer; color: var(--color-accent); }
+.earlier-copy :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.earlier-copy .receipt { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--color-gray); }
+.earlier-copy .receipt h3 { margin: 0; }
+.earlier-copy .help { margin-top: 1rem; }
+.earlier-copy .help summary { cursor: pointer; }
+.earlier-copy .muted { color: var(--color-fg-dim); }
+.earlier-copy .status { min-height: 1.6em; margin: 0; }
+@media (prefers-reduced-motion: reduce) { .lain-whisper { animation: none; } }

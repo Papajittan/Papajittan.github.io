@@ -5,10 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/check-public.mjs",
+    "encrypt": "node scripts/encrypt.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check:public": "node scripts/check-public.mjs",
+    "check:private": "node scripts/check-private.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "release:prepare": "node scripts/prepare-release.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "playwright": "^1.65.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.1"
   },

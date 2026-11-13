@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private authoring belongs OUTSIDE this repository. Defense against accidental copies.
+.arg-private/
+private/
+authoring/
+chapter.json
+*solution-guide*
+*SOLUTION-GUIDE*
+*.secret
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+/maintenance-notes.local.md
